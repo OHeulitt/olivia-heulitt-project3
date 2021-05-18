@@ -1,38 +1,180 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=Nunito:wght@300;400;700&display=swap");
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit}
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+/* basic styles */
+
+html {
+    font-size: 62.5%;
+    background: linear-gradient(45deg, rgb(253,245,230, 0.5), rgb(253,245,230, 0.5)), url("./assests/muted-beige-and-rose.jpg"), no-repeat;
+    background-size: cover;
+    min-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body, input, select, option, button, a {
+    font-size: 2rem;
+    font-family: 'Nunito', sans-serif;
+	font-weight: 400;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+    list-style-type: none;
+	padding-left: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.wrapper {
+    width: 95%;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.fancyFont {
+	font-family: 'Dawning of a New Day', cursive;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+	text-align: center;
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* header styles */
+
+h1 {
+	font-size: 8rem;
+	text-align: center;
+}
+
+header {
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.appInfo {
+	font-size: 2.5rem;
+}
+
+.instructions {
+	margin-bottom: 4rem;
+}
+
+/* address input styles */
+
+form {
+	border: 5px solid rgb(233, 183, 178);
+	flex-wrap: wrap;
+}
+
+input {
+	margin: 2rem;
+	flex-basis: 33%;
+	padding: 1rem;
+	/* background-color: rgb(233, 183, 178); */
+}
+
+select {
+	padding: 1rem;
+	cursor: pointer;
+}
+
+button {
+	background-color: oldlace;
+	border: 3px solid rgb(233, 183, 178);
+	margin: 2rem;
+	padding: 1.5rem 2rem;
+	border-radius: 1rem;
+	cursor: pointer;
+}
+
+/* results "page" styles */
+
+.savedAddresses {
+	flex-direction: column;
+}
+
+.savedAddresses h2 {
+	padding-top: 4rem;
+	margin-bottom: 0;
+	font-size: 5rem;
+	font-weight: 400;
+	text-align: center;
+}
+
+.savedAddresses h2::after {
+	content: "";
+	display: block;
+	height: 9rem;
+	background: url("./assests/calligraphy-embellishment.png") no-repeat center;
+	background-size: cover;
+}
+
+.resultContainer {
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.resultAddress {
+	flex-basis: calc(33% - 2rem);
+	margin: 1rem;
+	padding: 2rem;
+	font-size: 4.5rem;
+}
+
+/* footer styles */
+
+footer {
+	text-align: center;
+	background-color: rgb(233, 183, 178);
+	padding: 2rem;
+	margin-top: 4rem;
+}
+
+footer a {
+	color: black;
+}
+
+
+
+/* media queries */
+
+@media (max-width: 952px) {
+	h1 {
+		font-size: 6rem;
+		margin: 1rem;
+		padding: 1rem;
+	}
+
+	.savedAddresses h2 {
+		font-size: 4rem;
+	}
+
+	.savedAddresses h2::after {
+		height: 7rem;
+	}
+}
+
+@media (max-width: 519px) {
+	.resultContainer {
+		padding: 0.5rem;
+	}
+	
+	.resultAddress {
+		flex-basis: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.remove {
+		display: block;
+		margin: 0 auto;
+	}
 }
