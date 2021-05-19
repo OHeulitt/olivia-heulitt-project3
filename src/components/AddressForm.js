@@ -4,31 +4,30 @@ function AddressForm (props) {
 
 	const { userInput, submit, handleUser, reset } = props;
 
-	
-
     return (
 		<main>
 
+			{/* address form with inputs for first name, last name, 2 address lines, city, zipcode, and state dropdown */}
 			<form action="submit" className="flex" onSubmit={submit} onReset={reset}>
 				
 				<label htmlFor="firstName" className="sr-only">First Name</label>
-				<input name="firstName" type="text" id="firstName" placeholder="First name" required value={userInput.firstName} onChange={handleUser}  />
+				<input type="text" name="firstName" id="firstName" placeholder="First name" required value={userInput.firstName} onChange={handleUser}  />
 
 				<label htmlFor="lastName" className="sr-only">Last name</label>
-				<input name="lastName" type="text" id="lastName" placeholder="Last name" value={userInput.lastName} onChange={handleUser} required />
+				<input type="text" name="lastName" id="lastName" placeholder="Last name" required value={userInput.lastName} onChange={handleUser} />
 
 				<label htmlFor="addressLineOne" className="sr-only"></label>
-				<input name="addressOne" type="text" id="addressLineOne" placeholder="House number and street name" value={userInput.addressOne} onChange={handleUser} required />
+				<input type="text" name="addressOne" id="addressLineOne" placeholder="House number and street name" required value={userInput.addressOne} onChange={handleUser} />
 
 				<label htmlFor="addressLineTwo" className="sr-only">Address Line 2 - apartment number,etc.</label>
-				<input name="addressTwo" type="text" id="addressLineTwo" placeholder="Apartment, suite, unit, etc. (optional)" value={userInput.addressTwo} onChange={handleUser}/>
+				<input type="text" name="addressTwo" id="addressLineTwo" placeholder="Apartment, suite, unit, etc. (optional)" value={userInput.addressTwo} onChange={handleUser}/>
 
 				<label htmlFor="city" className="sr-only">City</label>
-				<input name="city" type="text" id="city" placeholder="City" value={userInput.city} onChange={handleUser} required />
+				<input type="text" name="city" id="city" placeholder="City" required value={userInput.city} onChange={handleUser} />
 
 				<label htmlFor="stateSelect" className="sr-only">Choose your state</label>
 				<select name="stateSelect" id="stateSelect" required value={userInput.stateSelect} onChange={handleUser}>
-					<option value="" defaultValue disabled>State</option>
+					<option value="" >State</option>
 					<option value="AL">Alabama</option>
 					<option value="AK">Alaska</option>
 					<option value="AZ">Arizona</option>
@@ -83,11 +82,11 @@ function AddressForm (props) {
 				</select>
 
 				<label htmlFor="zipcode" className="sr-only">Zipcode</label>
-				<input name="zipcode" type="text" id="zipcode" placeholder="Zipcode" value={userInput.zipcode} onChange={handleUser} required />
+				<input type="text" name="zipcode" id="zipcode" placeholder="Zipcode" required value={userInput.zipcode} onChange={handleUser} />
 
 				<button type="reset">Reset Form</button>
 
-				<button type="submit">Save</button>
+				<button type="submit" className="submitButton">Save Address</button>
 				
 
 			</form>
