@@ -95,6 +95,19 @@ button {
 	cursor: pointer;
 }
 
+button:hover,
+button:focus {
+	background-color: rgb(13, 85, 13);
+	color: white;
+	border: 3px solid rgb(13, 85, 13);
+}
+
+.submitButton {
+	background-color: rgb(233, 183, 178);
+	border: 3px solid rgb(13, 85, 13);
+	padding: 2rem 2.5rem;
+}
+
 /* results "page" styles */
 
 .savedAddresses {
@@ -115,6 +128,10 @@ button {
 	height: 9rem;
 	background: url("./assests/calligraphy-embellishment.png") no-repeat center;
 	background-size: cover;
+}
+
+.sortButtons {
+	margin-top: 2rem;
 }
 
 .resultContainer {

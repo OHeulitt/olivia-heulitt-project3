@@ -16,15 +16,20 @@ import SavedAddressBook from './components/SavedAddressBook.js';
 // listen for submit on form to store users inputs to firebase
 // call to firebase database to display saved addresses on the page in the "address book" component
 
+// SORTING
+// when button is clicked array of addresses is sorted by name
+
+
 // ERROR HANDLING
-// make all fields required - pop up alert with message as to what needs fixing
+// make all fields required 
 
 
 // STRETCH GOALS
+//✔ sort saved addresses by name (first or last?)
+//✔ saved addresses removable
 // button to download saved addresses as PDF
-// sort saved addresses by name (first or last?)
-// saved addresses removable
 // saved addresses editable
+// 
 
 // EXTREME STRETCH GOAL
 // accepts pen handwriting
@@ -98,20 +103,27 @@ function App() {
 
 		resetForm();
 
+    // alert user that address has been saved and where to "find" it
+    alert("Your new entry has been saved. You can find it at the end.");
 	
 	};
 	
 	// reset input values
 	const resetForm = () => {
-		setUserInput({
-			firstName: "",
-			lastName: "",
-			addressOne: "",
-			addressTwo: "",
-			city: "",
-			stateSelect: "",
-			zipcode: ""
-		});
+   
+    // confirm before actual reset of form
+    if(window.confirm("Are you sure you want to reset the form?")) {
+
+     setUserInput({
+       firstName: "",
+       lastName: "",
+       addressOne: "",
+       addressTwo: "",
+       city: "",
+       stateSelect: "",
+       zipcode: ""
+     });
+   }
 	}
 
 	return (
@@ -130,6 +142,7 @@ function App() {
 
 				<SavedAddressBook 
 					addresses={addresses}
+          setAddressesProps={setAddresses}
 					/>
 
 

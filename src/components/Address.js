@@ -3,13 +3,18 @@ import firebase from "../firebase.js"
 
 function Address(props) {
 
-	const { addressData,  } = props;
+	const { addressData } = props;
 	const { address } = addressData;
 	const databaseReference = firebase.database().ref();
 
 	// remove address from saved list
 	const handleRemoveAddress = (id) => {
-		databaseReference.child(id).remove();
+
+		// confirm removal of address before removing from database
+		if (window.confirm("Are you sure you want to remove this address from your address book?")) {
+
+			databaseReference.child(id).remove();
+		}
 	};
 
 	return (
