@@ -48,8 +48,6 @@ function SavedAddressBook(props) {
 
 			<h2>Your Saved Addresses</h2>
 
-			<img src="../assests/calligraphy-embellishment.png" alt="" />
-
 			<div className="flex sortButtons">
 
 				<button onClick={handleSortFirstName}>Sort by First Name</button>
