@@ -110,9 +110,6 @@ function App() {
 	
 	// reset input values
 	const resetForm = () => {
-   
-    // confirm before actual reset of form
-    if(window.confirm("Are you sure you want to reset the form?")) {
 
      setUserInput({
        firstName: "",
@@ -123,7 +120,7 @@ function App() {
        stateSelect: "",
        zipcode: ""
      });
-   }
+   
 	}
 
 	return (
